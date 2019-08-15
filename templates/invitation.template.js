@@ -1,0 +1,301 @@
+module.exports = {
+  html: function(locationName, inviterEmail, locationsDates) {
+    let renderedLocationsDates = ``;
+
+    for (let obj of locationsDates) {
+      renderedLocationsDates += `
+			<tr>
+				<td width="10%"></td>
+				<td width="40%">
+					<p style="color: #282832; font-size: 16px; font-weight: 600; font-family: 'Quicksand', sans-serif;">
+						${obj.location}
+					</p>
+				</td>
+				<td width="40%">
+					<p style="text-align: right; color: #858e97; font-size: 16px; font-family: 'Quicksand', sans-serif;">
+					${obj.dates}
+					</p>
+				</td>
+				<td width="10%"></td>
+			</tr>
+			`;
+    }
+
+    return `
+		<!doctype html>
+		<html>
+			<head>
+				<meta content="width=device-width" name="viewport">
+				<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+				<title>Trip invitation</title>
+				<style>
+					@import url(https://fonts.googleapis.com/css?family=Quicksand:400,600);
+		
+					/* -------------------------------------
+							RESPONSIVE AND MOBILE FRIENDLY STYLES
+					------------------------------------- */
+					@media only screen and (max-width: 620px) {
+						table[class=body] h1 {
+							font-size: 28px !important;
+							margin-bottom: 10px !important;
+						}
+						table[class=body] p,
+									table[class=body] ul,
+									table[class=body] ol,
+									table[class=body] td,
+									table[class=body] span,
+									table[class=body] a {
+							font-size: 16px !important;
+						}
+						table[class=body] .wrapper,
+									table[class=body] .article {
+							padding: 10px !important;
+						}
+						table[class=body] .content {
+							padding: 0 !important;
+						}
+						table[class=body] .container {
+							padding: 0 !important;
+							width: 100% !important;
+						}
+						table[class=body] .main {
+							border-left-width: 0 !important;
+							border-radius: 0 !important;
+							border-right-width: 0 !important;
+						}
+						table[class=body] .btn table {
+							width: 100% !important;
+						}
+						table[class=body] .btn a {
+							width: 100% !important;
+						}
+						table[class=body] .img-responsive {
+							height: auto !important;
+							max-width: 100% !important;
+							width: auto !important;
+						}
+		
+						.btn-primary a:hover {
+							background-color: #0099e3 !important;
+							border-color: #0099e3 !important;
+						}
+					}
+					/* -------------------------------------
+							PRESERVE THESE STYLES IN THE HEAD
+					------------------------------------- */
+					@media all {
+						.ExternalClass {
+							width: 100%;
+						}
+						.ExternalClass,
+									.ExternalClass p,
+									.ExternalClass span,
+									.ExternalClass font,
+									.ExternalClass td,
+									.ExternalClass div {
+							line-height: 100%;
+						}
+						.apple-link a {
+							color: inherit !important;
+							font-family: inherit !important;
+							font-size: inherit !important;
+							font-weight: inherit !important;
+							line-height: inherit !important;
+							text-decoration: none !important;
+						}
+						#MessageViewBody a {
+							color: inherit;
+							text-decoration: none;
+							font-size: inherit;
+							font-family: inherit;
+							font-weight: inherit;
+							line-height: inherit;
+						}
+					}
+				</style>
+			</head>
+			<body class="" style="background-color: #f6f6f6; font-family: 'Quicksand', sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+				<table border="0" cellpadding="0" cellspacing="0" class="body" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #f6f6f6;">
+					<tr>
+						<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">&nbsp;</td>
+						<td class="container" style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; display: block; Margin: 0 auto; max-width: 580px; padding: 10px; width: 580px;">
+							<div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
+		
+								<!-- START CENTERED WHITE CONTAINER -->
+								<span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">This is preheader text. Some clients will show this text as a preview.</span>
+								<table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
+		
+									<!-- START MAIN CONTENT AREA -->
+									<tr>
+										<td class="wrapper" style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 20px;">
+											<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+		
+												<!-- APP LOGO -->
+												<tr>
+													<td style="padding: 20px 0; text-align: center">
+														<img alt="alt_text" border="0" height="19" src="https://gefa-public-assets.s3.eu-central-1.amazonaws.com/images/dimelo.png" style="height: auto; font-family: 'Quicksand', sans-serif; font-size: 16px; line-height: 15px; color: #555555;" width="76"/>
+													</td>
+												</tr>
+		
+												<!-- HERO IMAGE : TRIP LOCATION NAME -->
+												<tr>
+													<td style="width: 550px; height: 150px; text-align: center; background-image: url(https://gefa-public-assets.s3.eu-central-1.amazonaws.com/images/dimelo-bg-mountains.png); background-size: cover;">
+														<h1 style="color: #ffffff; font-size: 32px">
+															Welcome to
+															<br/>
+															${locationName}
+														</h1>
+													</td>
+												</tr>
+		
+												<!-- MAIN MESSAGE : WHO INVITED THE USER -->
+												<tr>
+													<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">
+														<p style="color: #282832; text-align: center; font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: normal; margin: 20px; Padding-left: 20px; Padding-Right: 20px;">
+															You have been invited by ${inviterEmail} to join this trip! Below are the dates ${inviterEmail} suggests:
+														</p>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table bgcolor="ffffff" cellpadding="0" cellspacing="0" width="100%">
+															${renderedLocationsDates}
+														</table>
+													</td>
+												</tr>
+		
+												<!-- EMPTY SPACER -->
+												<tr>
+													<td colspan="3" style="background-color: #ffffff; height: 20px"></td>
+												</tr>
+		
+												<!-- ACTION BUTTON : Join these dates -->
+												<tr>
+													<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">
+														<table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+															<tbody>
+																<tr>
+																	<td align="center" style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 15px;">
+																		<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 220px">
+																			<tbody>
+																				<tr>
+																					<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; background-color: #0088e3; border: solid 2px #3498db; border-radius: 20px; text-align: center;">
+																						<a href="http://htmlemail.io" style="display: inline-block; color: #ffffff; background-color: #0088e3; border-radius: 20px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;" target="_blank">Join these dates</a>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+														<!-- <p style="font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
+														<p style="font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck! Hope it works.</p> -->
+													</td>
+												</tr>
+		
+												<!-- ACTION BUTTON : Suggest new dates -->
+												<tr>
+													<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">
+														<table border="0" cellpadding="0" cellspacing="0" class="btn" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+															<tbody>
+																<tr>
+																	<td align="center" style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 15px;">
+																		<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 220px">
+																			<tbody>
+																				<tr>
+																					<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; background-color: #ffffff; border: solid 2px #3498db; border-radius: 20px; text-align: center;">
+																						<a href="http://htmlemail.io" style="display: inline-block; color: #3498db; background-color: #ffffff; border-radius: 20px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: bold; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;" target="_blank">Suggest new dates</a>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+		
+												<!-- ACTION BUTTON : Not attending -->
+												<tr>
+													<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">
+														<table border="0" cellpadding="0" cellspacing="0" class="btn" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
+															<tbody>
+																<tr>
+																	<td align="center" style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; padding-bottom: 15px;">
+																		<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 220px">
+																			<tbody>
+																				<tr>
+																					<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top; background-color: #ffffff; border: solid 2px #3498db; border-radius: 20px; text-align: center;">
+																						<a href="http://htmlemail.io" style="display: inline-block; color: #3498db; background-color: #ffffff; border-radius: 20px; box-sizing: border-box; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: 600; margin: 0; padding: 12px 25px; text-transform: capitalize; border-color: #3498db;" target="_blank">Not attending</a>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+		
+									<!-- END MAIN CONTENT AREA -->
+								</table>
+		
+								<!-- START FOOTER -->
+								<div class="footer" style="clear: both; text-align: center; width: 100%;">
+									<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+		
+										<!-- FOOTER CONTAINER -->
+										<tr>
+											<td align="center" valign="top">
+												<table cellpadding="0" cellspacing="0">
+		
+													<!-- EMPTY SPACER -->
+													<tr>
+														<td colspan="3" style="height: 10px"></td>
+													</tr>
+		
+													<!-- DIVIDER -->
+													<tr>
+														<td colspan="3" style="height: 2px"></td>
+													</tr>
+		
+													<!-- LOGO CONTAINER -->
+													<tr>
+														<td colspan="3" style="padding: 10px 0; text-align: center">
+															<img alt="alt_text" border="0" height="15" src="https://gefa-public-assets.s3.eu-central-1.amazonaws.com/images/group-2.png" style="height: auto; font-family: sans-serif; font-size: 16px; line-height: 15px; color: #555555;" width="63"/>
+														</td>
+													</tr>
+		
+													<!-- LINKS CONTAINER -->
+													<tr>
+														<td style="text-align: center">
+															<a class="a-text-link" href="https://google.com/" style="padding: 10px; text-decoration: none; font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 20px; text-align: center; color: #858e97;">Privacy Policy</a>
+														</td>
+														<td style="text-align: center">
+															<a class="a-text-link" href="https://google.com/" style="padding: 10px; text-decoration: none; font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 20px; text-align: center; color: #858e97;">Terms & Conditions</a>
+														</td>
+														<td style="text-align: center">
+															<a class="a-text-link" href="https://google.com/" style="padding: 10px; text-decoration: none; font-family: 'Quicksand', sans-serif; font-size: 14px; line-height: 20px; text-align: center; color: #858e97;">© 2019 Dimelo</a>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</td>
+						<td style="font-family: 'Quicksand', sans-serif; font-size: 16px; vertical-align: top;">&nbsp;</td>
+					</tr>
+				</table>
+			</body>
+		</html>
+	`;
+  }
+};

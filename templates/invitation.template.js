@@ -189,8 +189,6 @@ module.exports = {
 																</tr>
 															</tbody>
 														</table>
-														<!-- <p style="font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px;">This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-														<p style="font-family: 'Quicksand', sans-serif; font-size: 16px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Good luck! Hope it works.</p> -->
 													</td>
 												</tr>
 		
